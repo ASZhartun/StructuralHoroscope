@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/LinearLayout1"
+    android:id="@+id/descriptionWrapper"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center" >
+    android:layout_gravity="center"
+    android:layout_margin="20dp" >
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -12,13 +13,13 @@
         android:layout_weight="0" >
 
         <ImageView
-            android:id="@+id/imageView1"
+            android:id="@+id/decorLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:adjustViewBounds="true"
-            android:maxHeight="100dp"
-            android:maxWidth="100dp"
+            android:maxHeight="60dp"
+            android:maxWidth="60dp"
             android:scaleType="fitXY"
             android:src="@drawable/chinese_sign_01" />
 
@@ -35,13 +36,15 @@
             android:id="@+id/signName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Рыбы" />
+            android:text="Рыбы"
+            android:textColor="#fff" />
 
         <TextView
             android:id="@+id/signCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="огонечек" />
+            android:text="огонечек"
+            android:textColor="#fff" />
 
     </LinearLayout>
 
