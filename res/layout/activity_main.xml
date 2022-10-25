@@ -1,16 +1,66 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_sky"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.structuralhoroscope.MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <LinearLayout
+        android:id="@+id/MainWorkPanel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/ChooseButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:background="@drawable/calendar" />
+
+        <EditText
+            android:id="@+id/BirthdayField"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:textColor="#fff" >
+
+        </EditText>
+
+        <Button
+            android:id="@+id/RunButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:background="@drawable/calculator" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/signOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <fragment
+            android:id="@+id/OverviewZodiac"
+            android:name="com.example.structuralhoroscope.SignOverviewFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <fragment
+            android:id="@+id/OverviewChineseSign"
+            android:name="com.example.structuralhoroscope.SignOverviewFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
