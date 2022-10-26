@@ -92,11 +92,11 @@ public class HoroEngine {
 	}
 
 // Вычисление номера Зодиака (0-Овен, ...)
-	private int zodiacSign(int Y, int M, int D) {
+	public int zodiacSign(int Y, int M, int D) {
 		return (int) sunPosition(julian(Y, M, D)) / 30;
 	}
 
-	private int chineseSign(int year) {
+	public int chineseSign(int year) {
 		return (year - 1900) % 12;
 	}
 	

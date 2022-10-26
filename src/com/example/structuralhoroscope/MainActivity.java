@@ -13,6 +13,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
@@ -71,10 +72,13 @@ public class MainActivity extends FragmentActivity {
 		// ”станавливаем значени€ дл€ китайской карточки
 		TextView tvChineseName = (TextView) overviewChineseFragment.findViewById(R.id.signName);
 		TextView tvChineseExtraName = (TextView) overviewChineseFragment.findViewById(R.id.signCategory);
+		ImageView chineseImage = (ImageView) overviewChineseFragment.findViewById(R.id.decorLeft);
 		String chineseSign = engine.getChineseSign(birthdayField.getText().toString());
 		tvChineseName.setText(chineseSign);
 		String chineseExtraSign = engine.getExtraChineseSign(birthdayField.getText().toString());
 		tvChineseExtraName.setText(chineseExtraSign);
+		chineseImage.setImageResource(getChineseSignImageByName(birthdayField.getText().toString()));
+//		chineseImage.setImageResource(getChineseSignImageByName(chineseSign));
 		
 		// ”станавливаем значени€ дл€ зодиакальной карточки
 		TextView tvZodiacName = (TextView) overviewZodiacFragment.findViewById(R.id.signName);
@@ -84,8 +88,14 @@ public class MainActivity extends FragmentActivity {
 		tvZodiacExtraName.setText("");
 	}
 	
-	public int getChineseSignImageByName(String name) {
-		return 0;
+	public int getChineseSignImageByName(String date) {
+		int index = Integer.parseInt(date.split("\\.")[2]);
+		index = engine.chineseSign(index);
+		String pos = String.valueOf(index);
+		if (index < 10) {
+			pos = "0" + pos;
+		}
+		return MainActivity.this.getResources().getIdentifier("chinese_sign_" + pos, "drawable", this.getPackageName());
 	}
 
 }
