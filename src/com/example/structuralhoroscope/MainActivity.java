@@ -103,7 +103,7 @@ public class MainActivity extends FragmentActivity {
 	
 	public int getChineseSignImage() {
 		int index = engine.chineseSign(engine.getCurrYear());
-		String pos = String.valueOf(index);
+		String pos = String.valueOf(++index);
 		if (index < 10) {
 			pos = "0" + pos;
 		}
@@ -112,7 +112,7 @@ public class MainActivity extends FragmentActivity {
 	
 	public int getZodiacSignImage() {
 		int index = engine.zodiacSign(engine.getCurrYear(), engine.getCurrMonth(), engine.getCurrDay());
-		String pos = String.valueOf(index);
+		String pos = String.valueOf(++index);
 		if (index < 10) {
 			pos = "0" + pos;
 		}
