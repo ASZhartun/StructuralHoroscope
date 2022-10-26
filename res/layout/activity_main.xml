@@ -21,7 +21,8 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_weight="0"
-            android:background="@drawable/calendar" />
+            android:background="@drawable/calendar"
+            android:onClick="onDatePicker" />
 
         <EditText
             android:id="@+id/BirthdayField"
@@ -31,7 +32,6 @@
             android:layout_weight="1"
             android:ems="10"
             android:textColor="#fff" >
-
         </EditText>
 
         <Button
@@ -40,7 +40,6 @@
             android:layout_height="50dp"
             android:layout_weight="0"
             android:background="@drawable/calculator" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -76,7 +75,6 @@
             android:name="com.example.structuralhoroscope.ResultViewFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
     </LinearLayout>
 
 </LinearLayout>
