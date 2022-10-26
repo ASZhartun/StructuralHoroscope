@@ -9,6 +9,10 @@ public class HoroEngine {
 	public static HashMap<Integer, String> chineseSigns = new HashMap<Integer, String>();
 	public static HashMap<Integer, String> zodiacSigns = new HashMap<Integer, String>();
 	public static HashMap<Integer, String> extraChineseSigns = new HashMap<Integer, String>();
+	
+	int currYear;
+	int currMonth;
+	int currDay;
 
 	public HoroEngine() {
 		init();
@@ -56,14 +60,17 @@ public class HoroEngine {
 
 	public String getZodiacSign(String date) {
 		String[] parts = date.split("\\.");
+		currYear = Integer.parseInt(parts[2]);
+		currMonth = Integer.parseInt(parts[1]);
+		currDay = Integer.parseInt(parts[0]);
 		return zodiacSigns
-				.get(zodiacSign(Integer.parseInt(parts[2]), Integer.parseInt(parts[1]), Integer.parseInt(parts[0])));
+				.get(zodiacSign(currYear, currMonth, currDay));
 	}
 
 	public String getChineseSign(String date) {
 		String[] parts = date.split("\\.");
-		int year = Integer.parseInt(parts[2]);
-		return chineseSigns.get(chineseSign(year));
+		currYear = Integer.parseInt(parts[2]);
+		return chineseSigns.get(chineseSign(currYear));
 	}
 	
 	public String getExtraChineseSign(String date) {
@@ -103,5 +110,31 @@ public class HoroEngine {
 	private int extra—hineseSign(int year) {
 		return year % 10;
 	}
+
+	public int getCurrYear() {
+		return currYear;
+	}
+
+	public void setCurrYear(int currYear) {
+		this.currYear = currYear;
+	}
+
+	public int getCurrMonth() {
+		return currMonth;
+	}
+
+	public void setCurrMonth(int currMonth) {
+		this.currMonth = currMonth;
+	}
+
+	public int getCurrDay() {
+		return currDay;
+	}
+
+	public void setCurrDay(int currDay) {
+		this.currDay = currDay;
+	}
+	
+	
 
 }

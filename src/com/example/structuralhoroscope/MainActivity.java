@@ -77,25 +77,35 @@ public class MainActivity extends FragmentActivity {
 		tvChineseName.setText(chineseSign);
 		String chineseExtraSign = engine.getExtraChineseSign(birthdayField.getText().toString());
 		tvChineseExtraName.setText(chineseExtraSign);
-		chineseImage.setImageResource(getChineseSignImageByName(birthdayField.getText().toString()));
+		chineseImage.setImageResource(getChineseSignImage());
 //		chineseImage.setImageResource(getChineseSignImageByName(chineseSign));
 		
 		// ”станавливаем значени€ дл€ зодиакальной карточки
 		TextView tvZodiacName = (TextView) overviewZodiacFragment.findViewById(R.id.signName);
 		TextView tvZodiacExtraName = (TextView) overviewZodiacFragment.findViewById(R.id.signCategory);
+		ImageView zodiacImage = (ImageView) overviewZodiacFragment.findViewById(R.id.decorLeft);
 		String zodiacSign = engine.getZodiacSign(birthdayField.getText().toString());
 		tvZodiacName.setText(zodiacSign);
 		tvZodiacExtraName.setText("");
+		zodiacImage.setImageResource(getZodiacSignImage());
 	}
 	
-	public int getChineseSignImageByName(String date) {
-		int index = Integer.parseInt(date.split("\\.")[2]);
-		index = engine.chineseSign(index);
+	public int getChineseSignImage() {
+		int index = engine.chineseSign(engine.getCurrYear());
 		String pos = String.valueOf(index);
 		if (index < 10) {
 			pos = "0" + pos;
 		}
 		return MainActivity.this.getResources().getIdentifier("chinese_sign_" + pos, "drawable", this.getPackageName());
+	}
+	
+	public int getZodiacSignImage() {
+		int index = engine.zodiacSign(engine.getCurrYear(), engine.getCurrMonth(), engine.getCurrDay());
+		String pos = String.valueOf(index);
+		if (index < 10) {
+			pos = "0" + pos;
+		}
+		return MainActivity.this.getResources().getIdentifier("zodiac_sign_" + pos, "drawable", this.getPackageName());
 	}
 
 }
