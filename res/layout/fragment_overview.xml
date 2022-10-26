@@ -18,8 +18,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:adjustViewBounds="true"
-            android:maxHeight="60dp"
-            android:maxWidth="60dp"
+            android:maxHeight="100dp"
+            android:maxWidth="100dp"
             android:scaleType="fitXY"
             android:src="@drawable/chinese_sign_01" />
 
