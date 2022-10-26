@@ -6,29 +6,35 @@ import java.util.TimeZone;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
+	
+	HoroEngine engine = new HoroEngine();
 
 	final String DATE_PATTERN = "dd.MM.yyyy";
 	int mYear = 1990, mMonth = 0, mDay = 1;
 
 	EditText birthdayField;
-	Button chooseButton;
+	View overviewZodiacFragment;
+	View overviewChineseFragment;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		birthdayField = (EditText) findViewById(R.id.BirthdayField);
-		chooseButton = (Button) findViewById(R.id.ChooseButton);
-
+		overviewZodiacFragment = findViewById(R.id.OverviewZodiac);
+		overviewChineseFragment = findViewById(R.id.OverviewChineseSign);
+		
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat(DATE_PATTERN);
 		sdf.setTimeZone(TimeZone.getDefault());
@@ -59,6 +65,27 @@ public class MainActivity extends FragmentActivity {
 			}
 		}, mYear, mMonth, mDay);
 		dpd.show();
+	}
+	
+	public void onCalculate(View v) {
+		// ”станавливаем значени€ дл€ китайской карточки
+		TextView tvChineseName = (TextView) overviewChineseFragment.findViewById(R.id.signName);
+		TextView tvChineseExtraName = (TextView) overviewChineseFragment.findViewById(R.id.signCategory);
+		String chineseSign = engine.getChineseSign(birthdayField.getText().toString());
+		tvChineseName.setText(chineseSign);
+		String chineseExtraSign = engine.getExtraChineseSign(birthdayField.getText().toString());
+		tvChineseExtraName.setText(chineseExtraSign);
+		
+		// ”станавливаем значени€ дл€ зодиакальной карточки
+		TextView tvZodiacName = (TextView) overviewZodiacFragment.findViewById(R.id.signName);
+		TextView tvZodiacExtraName = (TextView) overviewZodiacFragment.findViewById(R.id.signCategory);
+		String zodiacSign = engine.getZodiacSign(birthdayField.getText().toString());
+		tvZodiacName.setText(zodiacSign);
+		tvZodiacExtraName.setText("");
+	}
+	
+	public int getChineseSignImageByName(String name) {
+		return 0;
 	}
 
 }
