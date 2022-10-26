@@ -45,19 +45,22 @@ public final class R {
         public static final int horo_5=0x7f020014;
         public static final int horo_6=0x7f020015;
         public static final int horo_7=0x7f020016;
-        public static final int ic_launcher=0x7f020017;
-        public static final int zodiac_sign_01=0x7f020018;
-        public static final int zodiac_sign_02=0x7f020019;
-        public static final int zodiac_sign_03=0x7f02001a;
-        public static final int zodiac_sign_04=0x7f02001b;
-        public static final int zodiac_sign_05=0x7f02001c;
-        public static final int zodiac_sign_06=0x7f02001d;
-        public static final int zodiac_sign_07=0x7f02001e;
-        public static final int zodiac_sign_08=0x7f02001f;
-        public static final int zodiac_sign_09=0x7f020020;
-        public static final int zodiac_sign_10=0x7f020021;
-        public static final int zodiac_sign_11=0x7f020022;
-        public static final int zodiac_sign_12=0x7f020023;
+        public static final int horo_999=0x7f020017;
+        public static final int ic_launcher=0x7f020018;
+        public static final int moon_icon=0x7f020019;
+        public static final int question=0x7f02001a;
+        public static final int zodiac_sign_01=0x7f02001b;
+        public static final int zodiac_sign_02=0x7f02001c;
+        public static final int zodiac_sign_03=0x7f02001d;
+        public static final int zodiac_sign_04=0x7f02001e;
+        public static final int zodiac_sign_05=0x7f02001f;
+        public static final int zodiac_sign_06=0x7f020020;
+        public static final int zodiac_sign_07=0x7f020021;
+        public static final int zodiac_sign_08=0x7f020022;
+        public static final int zodiac_sign_09=0x7f020023;
+        public static final int zodiac_sign_10=0x7f020024;
+        public static final int zodiac_sign_11=0x7f020025;
+        public static final int zodiac_sign_12=0x7f020026;
     }
     public static final class id {
         public static final int BirthdayField=0x7f090003;

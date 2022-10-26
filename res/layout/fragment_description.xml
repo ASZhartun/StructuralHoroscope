@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/representationPanel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp" >
 
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="2"
-            android:src="@drawable/horo_1" />
+            android:src="@drawable/horo_999" />
 
         <ImageView
             android:id="@+id/decorRight"
@@ -49,8 +49,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -66,7 +66,7 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="Введи дату рождения"
                 android:textColor="#fff"
                 android:textSize="24sp" />
         </LinearLayout>
